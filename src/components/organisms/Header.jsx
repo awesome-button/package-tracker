@@ -1,9 +1,14 @@
 import React from "react";
+import logo from "../../assets/logo.png";
 
 const Header = () => {
   return (
     <header className="header">
-      <h1>Here is the Header</h1>
+      <img
+        className="logo"
+        src={logo}
+        alt="Logo with package icon and words Yellow Co. on it"
+      />
     </header>
   );
 };
