@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 const Search = () => {
   const [query, setQuery] = useState("");
+  const history = useHistory();
 
   const searchPackage = (event) => {
     event.preventDefault();
-    //React Router's history push function
+    history.push(`/parcels/${query}`);
     console.log(query);
   };
 
