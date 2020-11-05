@@ -8,8 +8,10 @@ const ResultsPage = ({ parcels, id }) => {
   return (
     <div className="results-page">
       <Header />
-      <Search />
-      <Item parcels={parcels} parcelID={id} />
+      <main>
+        <Search />
+        <Item parcels={parcels} parcelID={id} />
+      </main>
       <Footer />
     </div>
   );

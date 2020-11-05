@@ -1,0 +1,12 @@
+:root {
+  --green: #9ad3bc;
+  --orange: #f5b461;
+  --yellow: #f2da63;
+  --blue: #14274e;
+
+  --big-space: 2rem;
+  --medium-space: 1.5rem;
+  --small-space: 1rem;
+  --smaller-space: 0.5rem;
+  --tiny-space: 0.2rem;
+}

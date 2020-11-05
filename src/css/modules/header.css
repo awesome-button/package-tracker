@@ -1,6 +1,5 @@
 .header {
-  background-color: #9ad3bc;
-  border-radius: 1rem;
+  background-color: var(--green);
   text-align: center;
 }
 

@@ -1,0 +1,46 @@
+.App {
+  display: grid;
+}
+
+.App > * {
+  min-height: 118vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+body > * {
+  font-family: "Lato", sans-serif;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+span,
+a {
+  margin: 0;
+}
+
+a {
+  color: var(--blue);
+}
+
+span,
+a {
+  display: block;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+h3 {
+  font-size: 0.9rem;
+}
+
+span,
+a {
+  font-size: 0.8rem;
+}

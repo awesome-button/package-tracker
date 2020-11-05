@@ -1,6 +1,40 @@
 .search {
-  background-color: #f3eac2;
-  width: 40rem;
-  max-width: 90vw;
-  border-radius: 2rem;
+  height: 100%;
+  /* display: grid;
+  align-items: start; */
+}
+
+.search h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 3rem;
+  margin-bottom: var(--medium-space);
+}
+
+.search form {
+  display: grid;
+  justify-items: center;
+}
+
+.search p {
+  font-size: 1.6rem;
+  margin-bottom: var(--small-space);
+}
+
+.search label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: var(--smaller-space);
+}
+
+.search input {
+  border-radius: 3rem;
+  border: none;
+  background-color: var(--green);
+  height: 2.5rem;
+  width: 13rem;
+  outline: none;
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: var(--smaller-space);
 }

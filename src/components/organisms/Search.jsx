@@ -13,8 +13,16 @@ const Search = () => {
 
   return (
     <div className="search">
-      <h1>Track your package</h1>
-      <p>Are you expecting a delivery? Cool! Fill in your package ID below</p>
+      <div className="intro-text">
+        <h1>
+          Track your <br />
+          package
+        </h1>
+        <p>
+          Are you expecting a delivery? Cool! <br />
+          Fill in your package ID below
+        </p>
+      </div>
 
       <form type="submit" onSubmit={(event) => searchPackage(event)}>
         <label>Your package ID:</label>
@@ -23,7 +31,11 @@ const Search = () => {
           value={query}
           onChange={(event) => setQuery(event.target.value)}
         />
-        <button type="submit" onClick={(event) => searchPackage(event)}>
+        <button
+          className="search-button"
+          type="submit"
+          onClick={(event) => searchPackage(event)}
+        >
           Track
         </button>
       </form>

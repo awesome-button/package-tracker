@@ -1,0 +1,11 @@
+main {
+  background-color: var(--orange);
+  display: grid;
+  align-content: start;
+  padding: var(--small-space);
+}
+
+main > * {
+  color: white;
+  text-align: center;
+}

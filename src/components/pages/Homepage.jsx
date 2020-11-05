@@ -5,9 +5,11 @@ import Search from "../organisms/Search";
 
 const Homepage = () => {
   return (
-    <div>
+    <div className="homepage">
       <Header />
-      <Search />
+      <main>
+        <Search />
+      </main>
       <Footer />
     </div>
   );

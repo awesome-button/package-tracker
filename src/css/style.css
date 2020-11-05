@@ -1,4 +1,21 @@
-/* Modules */
+/* Layout */
+@import url("./base/layout.css");
 
+/* Fonts */
+@import url("./fonts.css");
+
+/* Variables */
+@import url("./variables.css");
+
+/* Atoms */
+@import url("./atoms/search-button.css");
+
+/* Modules */
 @import url("./modules/header.css");
 @import url("./modules/search.css");
+@import url("./modules/footer.css");
+@import url("./modules/main.css");
+
+/* Pages */
+@import url("./pages/homepage.css");
+@import url("./pages/result-page.css");
