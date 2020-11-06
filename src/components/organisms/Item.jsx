@@ -1,9 +1,10 @@
 import React from "react";
 
 const Item = ({ item }) => {
-  console.log(item);
+  //Destructuring to use properties of the item
   const { parcel_id, status, sender, location_name, eta } = item;
 
+  //use RegEx to format the eta fetched from API
   const formatETA = (eta) => {
     const regex = new RegExp(/\d{4}-\d{2}-\d{2}/g);
     const date = eta.match(regex);

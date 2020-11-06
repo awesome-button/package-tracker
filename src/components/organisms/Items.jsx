@@ -8,12 +8,12 @@ const Items = ({ parcels, parameter }) => {
 
   let filteredItems = [];
 
-  //If it is a number we want to find the package with this unique id
+  //If it is a number, we want to find the package with this unique id
   if (isNumber && parameter) {
-    console.log("number");
     filteredItems = parcels.filter((parcel) => {
       return parseInt(parcel.parcel_id) === parseInt(parameter);
     });
+    //If not a number we want to filter items by name
   } else {
     console.log("not number");
     filteredItems = parcels.filter((parcel) => {

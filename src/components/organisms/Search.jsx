@@ -4,6 +4,8 @@ import { useHistory } from "react-router-dom";
 const Search = () => {
   const [id, setId] = useState("");
   const [name, setName] = useState("");
+
+  //using history hook of react-router-dom allows to user to submit forms by pressing Enter
   const history = useHistory();
 
   const searchByID = (event) => {
@@ -11,6 +13,8 @@ const Search = () => {
     //prevents user from submitting an empty input
     if (id === "") return;
     history.push(`/parcels/${id}`);
+    //to avoid seeing both input fields filled in on the screen
+    setName("");
   };
 
   const searchByName = (event) => {
@@ -18,6 +22,8 @@ const Search = () => {
     //prevents user from submitting an empty input
     if (name === "") return;
     history.push(`/parcels/${name}`);
+    //to avoid seeing both input fields filled in on the screen
+    setId("");
   };
 
   return (

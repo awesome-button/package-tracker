@@ -1,40 +1,30 @@
 import React, { useEffect, useState } from "react";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import Homepage from "./components/pages/Homepage";
-import {
-  Route,
-  BrowserRouter as Router,
-  Link,
-  Switch,
-  useRouteMatch,
-} from "react-router-dom";
 import ResultsPage from "./components/pages/ResultPage";
-
-import info from "./parcels.json";
 
 const App = () => {
   const [parcels, setParcels] = useState([]);
 
-  // const endPoint = "https://my.api.mockaroo.com/orders.json?key=e49e6840";
-  const endPoint = info;
+  const endPoint = "https://my.api.mockaroo.com/orders.json?key=e49e6840";
 
   useEffect(() => {
-    setParcels(info);
-    // const getData = async () => {
-    //   try {
-    //     const response = await fetch(endPoint, { mode: "cors" });
+    const getData = async () => {
+      try {
+        const response = await fetch(endPoint, { mode: "cors" });
 
-    //     const data = await response.json();
+        const data = await response.json();
 
-    //     setParcels(data);
-    //   } catch {
-    //     console.log("An error");
-    //   }
-    // };
+        setParcels(data);
+      } catch {
+        console.log(
+          "An error while fetching information from the server. Please try again later"
+        );
+      }
+    };
 
-    // getData();
+    getData();
   }, []);
-
-  console.log(parcels);
 
   return (
     <Router>
