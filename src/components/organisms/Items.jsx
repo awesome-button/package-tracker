@@ -11,7 +11,7 @@ const Items = ({ parcels, parameter }) => {
   //If it is a number we want to find the package with this unique id
   if (isNumber) {
     filteredItems = parcels.filter((parcel) => {
-      return parseInt(parcel.id) === parseInt(parameter);
+      return parseInt(parcel.parcel_id) === parseInt(parameter);
     });
   } else {
     filteredItems = parcels.filter((parcel) => {
@@ -22,14 +22,14 @@ const Items = ({ parcels, parameter }) => {
   console.log(filteredItems);
 
   return (
-    <section>
+    <section className="items">
       {filteredItems.length === 0 ? (
         <p>
           Your search has not given any results. Please check that the ID/name
           you entered are correct and try again
         </p>
       ) : (
-        filteredItems.map((item, key) => <Item item={item} key={key} />)
+        filteredItems.map((item) => <Item item={item} key={item.id} />)
       )}
     </section>
   );
