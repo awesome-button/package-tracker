@@ -3,12 +3,17 @@ import { useHistory } from "react-router-dom";
 
 const Search = () => {
   const [query, setQuery] = useState("");
+  const [name, setName] = useState("");
   const history = useHistory();
 
-  const searchPackage = (event) => {
+  const searchByID = (event) => {
     event.preventDefault();
     history.push(`/parcels/${query}`);
-    console.log(query);
+  };
+
+  const searchByName = (event) => {
+    event.preventDefault();
+    history.push(`/parcels/${name}`);
   };
 
   return (
@@ -24,7 +29,7 @@ const Search = () => {
         </p>
       </div>
 
-      <form type="submit" onSubmit={(event) => searchPackage(event)}>
+      <form type="submit" onSubmit={(event) => searchByID(event)}>
         <label>Your package ID:</label>
         <input
           placeholder="5625"
@@ -34,7 +39,25 @@ const Search = () => {
         <button
           className="search-button"
           type="submit"
-          onClick={(event) => searchPackage(event)}
+          onClick={(event) => searchByID(event)}
+        >
+          Track
+        </button>
+      </form>
+
+      <p>or enter your name to see all your packages</p>
+
+      <form type="submit" onSubmit={(event) => searchByName(event)}>
+        <label>Full Name:</label>
+        <input
+          placeholder="John Snow"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+        />
+        <button
+          className="search-button"
+          type="submit"
+          onClick={(event) => searchByName(event)}
         >
           Track
         </button>

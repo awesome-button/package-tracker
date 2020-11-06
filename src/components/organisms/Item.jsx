@@ -1,8 +1,6 @@
 import React from "react";
 
-const Item = ({ parcels, parcelID }) => {
-  const item = parcels.filter((parcel) => parcel.id === parcelID)[0];
-
+const Item = ({ item }) => {
   console.log(item);
   const { id, status, sender, location_name, eta } = item;
 
