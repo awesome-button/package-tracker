@@ -9,51 +9,30 @@ const Items = ({ parcels, parameter }) => {
   let filteredItems = [];
 
   //If it is a number we want to find the package with this unique id
-  if (isNumber) {
+  if (isNumber && parameter) {
+    console.log("number");
     filteredItems = parcels.filter((parcel) => {
       return parseInt(parcel.parcel_id) === parseInt(parameter);
     });
   } else {
+    console.log("not number");
     filteredItems = parcels.filter((parcel) => {
       return parcel.user_name === parameter;
     });
   }
 
-  console.log(filteredItems);
-
   return (
     <section className="items">
       {filteredItems.length === 0 ? (
-        <p>
-          Your search has not given any results. Please check that the ID/name
-          you entered are correct and try again
+        <p className="no-results">
+          Your search has not given any results. <br />
+          Please check that the ID/name you entered are correct and try again
         </p>
       ) : (
         filteredItems.map((item) => <Item item={item} key={item.id} />)
       )}
     </section>
   );
-  //   const item = parcels.filter((parcel) => parcel.id === input)[0];
-  //   console.log(item);
-
-  //   const { id, status, sender, location_name, eta } = item;
-
-  //   return (
-  //     <article className="item">
-  //       <span>
-  //         <strong>Status:</strong>
-  //         {status}
-  //       </span>
-  //       <span>
-  //         <strong>Sender:</strong>
-  //         {sender}
-  //       </span>
-  //       <span>
-  //         <strong>Pick-up location:</strong>
-  //         {location_name}
-  //       </span>
-  //     </article>
-  //   );
 };
 
 export default Items;

@@ -2,7 +2,7 @@
   max-width: 40rem;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  background-color: #f3eac2;
+  background-color: var(--yellow);
   color: var(--blue);
   border-radius: 2rem;
 }

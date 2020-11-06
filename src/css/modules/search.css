@@ -20,6 +20,10 @@
   margin-bottom: var(--small-space);
 }
 
+.search .alternative {
+  font-weight: 700;
+}
+
 .search label {
   font-size: 1.2rem;
   font-weight: 700;
@@ -37,4 +41,28 @@
   text-align: center;
   font-size: 1.6rem;
   margin-bottom: var(--smaller-space);
+}
+
+@media (min-width: 750px) {
+  .search .forms {
+    display: grid;
+    grid-template-columns: 1fr 10rem 1fr;
+    align-items: center;
+    column-gap: var(--big-space);
+    margin: var(--bigger-space);
+    padding: var(--medium-space);
+  }
+
+  .search input {
+    height: 3rem;
+    width: 15rem;
+  }
+
+  .search label {
+    font-size: 1.4rem;
+  }
+
+  .search .intro-text p {
+    font-size: 1.7rem;
+  }
 }

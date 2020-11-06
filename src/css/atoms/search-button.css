@@ -10,3 +10,10 @@
   font-size: 1rem;
   margin-bottom: var(--smaller-space);
 }
+
+@media (min-width: 750px) {
+  .search-button {
+    height: 3rem;
+    width: 9rem;
+  }
+}

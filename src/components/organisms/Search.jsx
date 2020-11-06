@@ -2,22 +2,26 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 const Search = () => {
-  const [query, setQuery] = useState("");
+  const [id, setId] = useState("");
   const [name, setName] = useState("");
   const history = useHistory();
 
   const searchByID = (event) => {
     event.preventDefault();
-    history.push(`/parcels/${query}`);
+    //prevents user from submitting an empty input
+    if (id === "") return;
+    history.push(`/parcels/${id}`);
   };
 
   const searchByName = (event) => {
     event.preventDefault();
+    //prevents user from submitting an empty input
+    if (name === "") return;
     history.push(`/parcels/${name}`);
   };
 
   return (
-    <div className="search">
+    <section className="search">
       <div className="intro-text">
         <h1>
           Track your <br />
@@ -29,40 +33,46 @@ const Search = () => {
         </p>
       </div>
 
-      <form type="submit" onSubmit={(event) => searchByID(event)}>
-        <label>Your package ID:</label>
-        <input
-          placeholder="5625"
-          value={query}
-          onChange={(event) => setQuery(event.target.value)}
-        />
-        <button
-          className="search-button"
-          type="submit"
-          onClick={(event) => searchByID(event)}
-        >
-          Track
-        </button>
-      </form>
+      {/* The part with forms will look different depending on screen size */}
 
-      <p>or enter your name to see all your packages</p>
+      <div className="forms">
+        <form type="submit" onSubmit={(event) => searchByID(event)}>
+          <label>Package ID:</label>
+          <input
+            placeholder="5625"
+            value={id}
+            onChange={(event) => setId(event.target.value)}
+          />
+          <button
+            className="search-button"
+            type="submit"
+            onClick={(event) => searchByID(event)}
+          >
+            Track
+          </button>
+        </form>
 
-      <form type="submit" onSubmit={(event) => searchByName(event)}>
-        <label>Full Name:</label>
-        <input
-          placeholder="John Snow"
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-        />
-        <button
-          className="search-button"
-          type="submit"
-          onClick={(event) => searchByName(event)}
-        >
-          Track
-        </button>
-      </form>
-    </div>
+        <p className="alternative">
+          or enter your name to see all your packages
+        </p>
+
+        <form type="submit" onSubmit={(event) => searchByName(event)}>
+          <label>Full Name:</label>
+          <input
+            placeholder="John Snow"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+          />
+          <button
+            className="search-button"
+            type="submit"
+            onClick={(event) => searchByName(event)}
+          >
+            Track
+          </button>
+        </form>
+      </div>
+    </section>
   );
 };
 

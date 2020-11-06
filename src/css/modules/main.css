@@ -2,6 +2,7 @@ main {
   background-color: var(--orange);
   display: grid;
   align-content: start;
+  justify-items: center;
   padding: var(--small-space);
 }
 
